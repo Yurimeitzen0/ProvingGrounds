@@ -30,15 +30,14 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	/** Fires a projectile. */
-	void OnFire();
+	
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	
+	void OnFire();
 
-	/** Gun muzzle's offset from the characters location */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
-	FVector GunOffset;
 
 	/** Projectile class to spawn */
 	UPROPERTY(EditDefaultsOnly, Category = Projectile)
