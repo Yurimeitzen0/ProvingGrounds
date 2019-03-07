@@ -35,7 +35,7 @@ void AGun::BeginPlay()
 	
 }
 
-void AGun::OnFire()
+void AGun::Fire()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Worked!!!!!"));
 	// try and fire a projectile

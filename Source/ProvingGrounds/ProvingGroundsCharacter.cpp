@@ -100,7 +100,7 @@ void AProvingGroundsCharacter::BeginPlay()
 	}
 
 	Gun->AnimInstance = Mesh1P->GetAnimInstance();
-	InputComponent->BindAction("Fire", IE_Pressed, Gun, &AGun::OnFire);
+	InputComponent->BindAction("Fire", IE_Pressed, Gun, &AGun::Fire);
 
 	
 }

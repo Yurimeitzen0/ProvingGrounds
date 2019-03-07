@@ -37,7 +37,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	
 	UFUNCTION(BlueprintCallable)
-	void OnFire();
+	void Fire();
 
 
 	/** Projectile class to spawn */
