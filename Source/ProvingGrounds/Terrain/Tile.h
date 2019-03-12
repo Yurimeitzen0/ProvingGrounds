@@ -15,7 +15,7 @@ public:
 	// Sets default values for this actor's properties
 	ATile();
 	UFUNCTION(BlueprintCallable, Category = "Setup" )
-	void PlaceActors(TSubclassOf<AActor> ToSpawn, int Min, int Max);
+	void PlaceActors(TSubclassOf<AActor> ToSpawn, int Min = 1, int Max = 1, float Radius = 500);
 
 protected:
 	// Called when the game starts or when spawned
@@ -24,7 +24,10 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+private:
+	bool CanSpawnAtLocation(FVector Location, float Radius);
 	
+	bool FindEmptyLocation(FVector& OutLocation, float Radius);
 	
+	void PlaceActor(TSubclassOf<AActor> ToSpawn, FVector RandomSpotInTile);
 };
