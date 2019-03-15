@@ -30,4 +30,7 @@ private:
 	bool FindEmptyLocation(FVector& OutLocation, float Radius);
 	
 	void PlaceActor(TSubclassOf<AActor> ToSpawn, FVector RandomSpotInTile, float Rotation, float Scale);
+
+
+	
 };

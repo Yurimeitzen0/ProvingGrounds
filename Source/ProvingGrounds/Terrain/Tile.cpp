@@ -37,7 +37,7 @@ void ATile::PlaceActors(TSubclassOf<AActor> ToSpawn, int Min, int Max, float Rad
 void ATile::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 
 }
 
@@ -82,4 +82,5 @@ void ATile::PlaceActor(TSubclassOf<AActor> ToSpawn, FVector RandomSpotInTile, fl
 	Spawned->SetActorScale3D(FVector(Scale));
 	
 }
+
 
