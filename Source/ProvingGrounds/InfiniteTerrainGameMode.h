@@ -16,11 +16,17 @@ class PROVINGGROUNDS_API AInfiniteTerrainGameMode : public AProvingGroundsGameMo
 	GENERATED_BODY()
 
 public:
-	
+	AInfiniteTerrainGameMode();
+
 	UFUNCTION(BlueprintCallable, Category = "NavBounds Pool")
 	void PopulateBoundsVolumePool();
 
 public:
 
 	void AddPool(class ANavMeshBoundsVolume *VolumeToAdd);
+	
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "BoundsPool")
+	class UActorPool* NavMeshBoundsVolumePool;
+
 };

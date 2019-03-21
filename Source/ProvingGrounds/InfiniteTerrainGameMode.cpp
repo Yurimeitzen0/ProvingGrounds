@@ -6,6 +6,12 @@
 #include "EngineUtils.h"
 #include "Navmesh/NavMeshBoundsVolume.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
+#include "ActorPool.h"
+
+AInfiniteTerrainGameMode::AInfiniteTerrainGameMode()
+{
+	NavMeshBoundsVolumePool = CreateDefaultSubobject<UActorPool>(FName("BoundsPool"));
+}
 
 void AInfiniteTerrainGameMode::PopulateBoundsVolumePool()
 {
@@ -21,5 +27,5 @@ void AInfiniteTerrainGameMode::PopulateBoundsVolumePool()
 
 void AInfiniteTerrainGameMode::AddPool(ANavMeshBoundsVolume *VolumeToAdd)
 {
-	UE_LOG(LogTemp, Warning, TEXT("NavMeshFound %s"), *VolumeToAdd->GetName());
+	NavMeshBoundsVolumePool->Add(VolumeToAdd);
 }

@@ -74,7 +74,7 @@ void AMannequin::BeginPlay()
 void AMannequin::UnPossessed()
 {
 	Super::UnPossessed();
-	if (!ensure(Gun)) { return; }
+	if (Gun == nullptr) { return; }
 	Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
 }
 
