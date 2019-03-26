@@ -30,13 +30,10 @@ public:
 	ATile();
 	UFUNCTION(BlueprintCallable, Category = "Spawning" )
 	void PlaceActors(TSubclassOf<AActor> ToSpawn, int Min = 1, int Max = 1, float Radius = 500, float MinScale = 1.f, float MaxScale = 1.f);
+	
 	UFUNCTION(BlueprintCallable, Category = "Spawning")
 	void PlaceAiPawns(TSubclassOf<APawn> ToSpawn, int Min = 1, int Max = 1, float Radius = 500);
 
-	
-
-
-	TArray<FSpawnPosition> RandomSpawnPositions(int Min, int Max, float MinScale, float MaxScale, float Radius);
 
 	UFUNCTION(BlueprintCallable, Category = "Pool")
 	void SetPool(class UActorPool* Pool);
@@ -65,12 +62,18 @@ private:
 	
 	void PlaceActor(TSubclassOf<AActor> ToSpawn, const FSpawnPosition& SpawnPosition);
 
-	void PlaceAiPawn(TSubclassOf<APawn> ToSpawn, const FSpawnPosition &SpawnPosition);
+	void PlaceActor(TSubclassOf<APawn> ToSpawn, const FSpawnPosition &SpawnPosition);
 
 	void PositionNavMeshBoundsVolume();
 
 	class UActorPool* Pool;
 
 	AActor* NavMeshBoundsVolume;
+
+	template<class Generate>
+	void RandomlyPlaceActors(TSubclassOf<Generate> ToSpawn, int Min = 1, int Max = 1, float Radius = 500, float MinScale = 1.f, float MaxScale = 1.f);
+
 	
 };
+
+
